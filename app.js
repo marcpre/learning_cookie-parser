@@ -17,12 +17,19 @@ app.get('/', (req, res) => {
     console.log('Cookies: ', req.cookies)
 })
 
-//set cookie
+//set cookie by url
 app.get('/set/:cookie', (req, res) => {
     let cookie = req.params.cookie
     console.log("Cookie set by user: " + cookie)
     let setCookie = "This is my cookie"
     res.cookie(setCookie)
+})
+
+//set cookie
+app.get('/set', (req, res) => {
+    let cookie = "This is my cookie"
+    console.log("Cookie set by admin " + cookie)
+    res.cookie(cookie)
 })
 
 /**
